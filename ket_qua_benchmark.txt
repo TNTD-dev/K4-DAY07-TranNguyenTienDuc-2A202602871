@@ -1,0 +1,303 @@
+=== Strategy: RecursiveChunker (recursive) ===
+Corpus : data/hoc-bong-hust
+Embed  : text-embedding-3-small
+Loaded 19 chunks from 7 files
+
+Q1: GPA và điểm rèn luyện tối thiểu để đạt học bổng KKHT loại A là bao nhiêu?
+  filter: none
+  gold: Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm.  [hust-kkht-criteria-student]
+  1. score=0.651  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD+SPAN
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  2. score=0.611  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#1  << GOLD DOC (span missing)
+     - Dùng kết quả học tập và rèn luyện của học kỳ liền trước để xét cấp học bổng trong học kỳ sau. - Điểm xét học bổng = [(GPA x 2) + (Điểm rèn luyện : 25)] : 3, q...
+  3. score=0.557  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#0
+     # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn luyện xuất ...
+  agent: Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm.
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q2: Tiêu chuẩn xét cấp học bổng KKHT là gì?
+  filter: {'audience': 'student'}
+  gold: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.  [hust-kkht-criteria-student]
+  1. score=0.760  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD+SPAN
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  2. score=0.592  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#1
+     Những sinh viên chưa đăng ký tài khoản, thay đổi tài khoản để nhận học bổng, hoặc có ý kiến thắc mắc về việc xét cấp học bổng gửi câu hỏi trước 17h00 thứ 4 ngày...
+  3. score=0.581  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#1  << GOLD DOC (span missing)
+     - Dùng kết quả học tập và rèn luyện của học kỳ liền trước để xét cấp học bổng trong học kỳ sau. - Điểm xét học bổng = [(GPA x 2) + (Điểm rèn luyện : 25)] : 3, q...
+  agent: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.
+  score: 2/2  span_rank=1  doc_rank=1
+  --- A/B without filter ---
+  1. score=0.760  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD+SPAN
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  2. score=0.656  doc_id=hust-kkht-council-staff  id=hust-kkht-council-staff#0
+     # Hội đồng xét cấp học bổng KKHT và quỹ học bổng  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách khoa Hà Nội, ban hành kè...
+  3. score=0.592  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#1
+     Những sinh viên chưa đăng ký tài khoản, thay đổi tài khoản để nhận học bổng, hoặc có ý kiến thắc mắc về việc xét cấp học bổng gửi câu hỏi trước 17h00 thứ 4 ngày...
+  agent: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q3: Hạn nộp hồ sơ học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027 là khi nào và nộp ở đâu?
+  filter: none
+  gold: Nộp trên eHUST hoặc qldt.hust.edu.vn mục học bổng, hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.  [hust-tran-dai-nghia-2026-1]
+  1. score=0.616  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#4  << GOLD+SPAN
+     - Sinh viên đăng ký xét học bổng trên hệ thống eHUST hoặc https://qldt.hust.edu.vn/ mục học bổng và hoàn thành việc nộp hồ sơ văn bản giấy tại phòng 102 nhà C1 ...
+  2. score=0.571  doc_id=hust-kkht-eligibility-2025-2  id=hust-kkht-eligibility-2025-2#1
+     ## 2. Hướng dẫn thắc mắc / hỏi đáp và đăng ký số tài khoản nhận học bổng  Trong phần hiển thị kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2 đã có:  - P...
+  3. score=0.556  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#1
+     Những sinh viên chưa đăng ký tài khoản, thay đổi tài khoản để nhận học bổng, hoặc có ý kiến thắc mắc về việc xét cấp học bổng gửi câu hỏi trước 17h00 thứ 4 ngày...
+  agent: Nộp trên eHUST hoặc qldt.hust.edu.vn mục học bổng, hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q4: Kỳ II năm học 2025-2026 có bao nhiêu sinh viên được học bổng KKHT loại A, B và C?
+  filter: none
+  gold: 1.888 sinh viên: 1.343 loại A (xuất sắc), 456 loại B (giỏi), 89 loại C (khá).  [hust-kkht-results-2025-2]
+  1. score=0.701  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#0  << GOLD+SPAN
+     # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn luyện xuất ...
+  2. score=0.608  doc_id=hust-kkht-eligibility-2025-2  id=hust-kkht-eligibility-2025-2#0
+     # Kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2  Ban Công tác sinh viên - Ban Đào tạo thông báo đã có kết quả đánh giá điều kiện để được xét học bổng K...
+  3. score=0.589  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#2
+     - Sinh viên đang trong thời gian bị kỷ luật từ mức cảnh cáo trở lên. - Sinh viên đã được nhận một trong các loại học bổng sau có giá trị trên 10 triệu đồng tron...
+  agent: 1.888 sinh viên: 1.343 loại A (xuất sắc), 456 loại B (giỏi), 89 loại C (khá).
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q5: Học bổng MB The Best of MB Chasing 2025 trị giá bao nhiêu và hạn đăng ký là khi nào?
+  filter: none
+  gold: Từ 10–30 triệu VNĐ/sinh viên; hạn đăng ký 09/01/2026.  [hust-mb-chasing-2025]
+  1. score=0.754  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#0  << GOLD DOC (span missing)
+     # Học bổng MB The Best of MB Chasing 2025  Đăng ký tại: https://forms.gle/1DwxLDFqGjA8cUkQ9  Học bổng "The Best of MB Chasing" dành cho Trường Công nghệ Thông t...
+  2. score=0.578  doc_id=hust-kkht-eligibility-2025-2  id=hust-kkht-eligibility-2025-2#1
+     ## 2. Hướng dẫn thắc mắc / hỏi đáp và đăng ký số tài khoản nhận học bổng  Trong phần hiển thị kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2 đã có:  - P...
+  3. score=0.561  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#1  << GOLD+SPAN
+     ## Thời hạn  Hạn đăng ký: 09/01/2026....
+  agent: Từ 10–30 triệu VNĐ/sinh viên; hạn đăng ký 09/01/2026.
+  score: 1/2  span_rank=3  doc_rank=1
+
+TOTAL 9/10  (RecursiveChunker)
+
+=== Strategy: FixedSizeChunker (fixed) ===
+Corpus : data/hoc-bong-hust
+Embed  : text-embedding-3-small
+Loaded 30 chunks from 7 files
+
+Q1: GPA và điểm rèn luyện tối thiểu để đạt học bổng KKHT loại A là bao nhiêu?
+  filter: none
+  gold: Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm.  [hust-kkht-criteria-student]
+  1. score=0.652  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#1  << GOLD+SPAN
+      1,2 lần mức học bổng loại khá. - Loại xuất sắc (loại A): bằng 1,5 lần mức học bổng loại khá.  ## Tiêu chuẩn xét cấp (Điều 3)  - Loại C: GPA ≥ 2,5 và điểm rèn l...
+  2. score=0.634  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#2  << GOLD DOC (span missing)
+     ọc bổng = [(GPA x 2) + (Điểm rèn luyện : 25)] : 3, quy về thang 4, làm tròn 2 chữ số thập phân. - Xét theo khóa, ngành đào tạo, ưu tiên từ loại A đến loại C cho...
+  3. score=0.624  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  agent: Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm.
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q2: Tiêu chuẩn xét cấp học bổng KKHT là gì?
+  filter: {'audience': 'student'}
+  gold: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.  [hust-kkht-criteria-student]
+  1. score=0.779  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  2. score=0.667  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#2
+     ả lời qua email của sinh viên.  Quy định về việc xét cấp học bổng KKHT: Quyết định số 2124/QĐ-ĐHBK ngày 30/11/2020.  Ban Công tác sinh viên....
+  3. score=0.589  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#1  << GOLD+SPAN
+      1,2 lần mức học bổng loại khá. - Loại xuất sắc (loại A): bằng 1,5 lần mức học bổng loại khá.  ## Tiêu chuẩn xét cấp (Điều 3)  - Loại C: GPA ≥ 2,5 và điểm rèn l...
+  agent: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.
+  score: 1/2  span_rank=3  doc_rank=1
+  --- A/B without filter ---
+  1. score=0.779  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  2. score=0.673  doc_id=hust-kkht-council-staff  id=hust-kkht-council-staff#0
+     # Hội đồng xét cấp học bổng KKHT và quỹ học bổng  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách khoa Hà Nội, ban hành kè...
+  3. score=0.667  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#2
+     ả lời qua email của sinh viên.  Quy định về việc xét cấp học bổng KKHT: Quyết định số 2124/QĐ-ĐHBK ngày 30/11/2020.  Ban Công tác sinh viên....
+  agent: Không đủ ngữ cảnh trong top-3 để trả lời chính xác.
+  score: 0/2  span_rank=None  doc_rank=1
+
+Q3: Hạn nộp hồ sơ học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027 là khi nào và nộp ở đâu?
+  filter: none
+  gold: Nộp trên eHUST hoặc qldt.hust.edu.vn mục học bổng, hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.  [hust-tran-dai-nghia-2026-1]
+  1. score=0.609  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#5  << GOLD DOC (span missing)
+     c kỳ 2026.1. - Nhóm 4: 2 mức 5 triệu đồng và 10 triệu đồng.  ## 3. Hồ sơ đăng ký xét học bổng  ### Nhóm 1 và Nhóm 2  - Đơn đăng ký xét, cấp Học bổng Trần Đại Ng...
+  2. score=0.577  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#7  << GOLD+SPAN
+     h xét, cấp học bổng  - Sinh viên đăng ký xét học bổng trên hệ thống eHUST hoặc https://qldt.hust.edu.vn/ mục học bổng và hoàn thành việc nộp hồ sơ văn bản giấy ...
+  3. score=0.565  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#1
+     àm thủ tục chuyển tiền học bổng qua tài khoản ngân hàng, tài khoản Viettel Money vào cuối tháng 5/2026.  Những sinh viên chưa đăng ký tài khoản, thay đổi tài kh...
+  agent: Nộp trên eHUST hoặc qldt.hust.edu.vn mục học bổng, hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.
+  score: 1/2  span_rank=2  doc_rank=1
+
+Q4: Kỳ II năm học 2025-2026 có bao nhiêu sinh viên được học bổng KKHT loại A, B và C?
+  filter: none
+  gold: 1.888 sinh viên: 1.343 loại A (xuất sắc), 456 loại B (giỏi), 89 loại C (khá).  [hust-kkht-results-2025-2]
+  1. score=0.701  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#0  << GOLD+SPAN
+     # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn luyện xuất ...
+  2. score=0.616  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#5
+     c kỳ 2026.1. - Nhóm 4: 2 mức 5 triệu đồng và 10 triệu đồng.  ## 3. Hồ sơ đăng ký xét học bổng  ### Nhóm 1 và Nhóm 2  - Đơn đăng ký xét, cấp Học bổng Trần Đại Ng...
+  3. score=0.610  doc_id=hust-kkht-eligibility-2025-2  id=hust-kkht-eligibility-2025-2#0
+     # Kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2  Ban Công tác sinh viên - Ban Đào tạo thông báo đã có kết quả đánh giá điều kiện để được xét học bổng K...
+  agent: 1.888 sinh viên: 1.343 loại A (xuất sắc), 456 loại B (giỏi), 89 loại C (khá).
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q5: Học bổng MB The Best of MB Chasing 2025 trị giá bao nhiêu và hạn đăng ký là khi nào?
+  filter: none
+  gold: Từ 10–30 triệu VNĐ/sinh viên; hạn đăng ký 09/01/2026.  [hust-mb-chasing-2025]
+  1. score=0.749  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#1  << GOLD+SPAN
+     , Thực tập sinh, hoặc Đại sứ Thanh niên Triển vọng của MB. - Đảm bảo các tiêu chí học bổng theo quy định của nhà trường.  ## Quyền lợi  - Học bổng The Best of M...
+  2. score=0.737  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#0  << GOLD DOC (span missing)
+     # Học bổng MB The Best of MB Chasing 2025  Đăng ký tại: https://forms.gle/1DwxLDFqGjA8cUkQ9  Học bổng "The Best of MB Chasing" dành cho Trường Công nghệ Thông t...
+  3. score=0.612  doc_id=hust-kkht-eligibility-2025-2  id=hust-kkht-eligibility-2025-2#3
+      thắc mắc kết quả và đăng ký tài khoản nhận học bổng: đến 17:00 Thứ Năm ngày 23/04/2026....
+  agent: Từ 10–30 triệu VNĐ/sinh viên; hạn đăng ký 09/01/2026.
+  score: 2/2  span_rank=1  doc_rank=1
+
+TOTAL 8/10  (FixedSizeChunker)
+
+=== Strategy: SentenceChunker (sentence) ===
+Corpus : data/hoc-bong-hust
+Embed  : text-embedding-3-small
+Loaded 41 chunks from 7 files
+
+Q1: GPA và điểm rèn luyện tối thiểu để đạt học bổng KKHT loại A là bao nhiêu?
+  filter: none
+  gold: Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm.  [hust-kkht-criteria-student]
+  1. score=0.708  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#2  << GOLD+SPAN
+     - Loại B: GPA ≥ 3,2 và điểm rèn luyện học kỳ ≥ 80 điểm. - Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm. ## Nguyên tắc xét đối với sinh viên (Điều 4)  - ...
+  2. score=0.621  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#3  << GOLD DOC (span missing)
+     - Điểm xét học bổng = [(GPA x 2) + (Điểm rèn luyện : 25)] : 3, quy về thang 4, làm tròn 2 chữ số thập phân. - Xét theo khóa, ngành đào tạo, ưu tiên từ loại A đế...
+  3. score=0.619  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  agent: Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm.
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q2: Tiêu chuẩn xét cấp học bổng KKHT là gì?
+  filter: {'audience': 'student'}
+  gold: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.  [hust-kkht-criteria-student]
+  1. score=0.776  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  2. score=0.581  doc_id=hust-kkht-eligibility-2025-2  id=hust-kkht-eligibility-2025-2#0
+     # Kết quả đánh giá điều kiện được xét học bổng kỳ 2025.2  Ban Công tác sinh viên - Ban Đào tạo thông báo đã có kết quả đánh giá điều kiện để được xét học bổng K...
+  3. score=0.579  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#2
+     Sinh viên không gửi thắc mắc qua bất kỳ kênh nào khác (email, Yammer, hệ thống hỏi đáp trên iCTSV). Kết thúc thời gian tiếp nhận, Ban Công tác sinh viên và Ban ...
+  agent: Không đủ ngữ cảnh trong top-3 để trả lời chính xác.
+  score: 0/2  span_rank=None  doc_rank=1
+  --- A/B without filter ---
+  1. score=0.776  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#0  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách kho...
+  2. score=0.679  doc_id=hust-kkht-council-staff  id=hust-kkht-council-staff#1
+     - Quỹ học bổng KKHT hình thành từ nguồn học phí và bằng 8% (tám phần trăm) học phí của học kỳ lấy điểm xét cấp học bổng. ## Thời gian công bố (Điều 5)  Danh sác...
+  3. score=0.677  doc_id=hust-kkht-council-staff  id=hust-kkht-council-staff#0
+     # Hội đồng xét cấp học bổng KKHT và quỹ học bổng  Nguồn: Quy định về việc xét cấp học bổng khuyến khích học tập tại Trường Đại học Bách khoa Hà Nội, ban hành kè...
+  agent: Không đủ ngữ cảnh trong top-3 để trả lời chính xác.
+  score: 0/2  span_rank=None  doc_rank=1
+
+Q3: Hạn nộp hồ sơ học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027 là khi nào và nộp ở đâu?
+  filter: none
+  gold: Nộp trên eHUST hoặc qldt.hust.edu.vn mục học bổng, hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.  [hust-tran-dai-nghia-2026-1]
+  1. score=0.569  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#9  << GOLD+SPAN
+     Quy trình đăng ký và kế hoạch xét, cấp học bổng  - Sinh viên đăng ký xét học bổng trên hệ thống eHUST hoặc https://qldt.hust.edu.vn/ mục học bổng và hoàn thành ...
+  2. score=0.554  doc_id=hust-kkht-eligibility-2025-2  id=hust-kkht-eligibility-2025-2#4
+     Thời gian tiếp nhận thắc mắc kết quả và đăng ký tài khoản nhận học bổng: đến 17:00 Thứ Năm ngày 23/04/2026....
+  3. score=0.545  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#0  << GOLD DOC (span missing)
+     # Xét, cấp học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027  ## 1. Đối tượng được đăng ký xét học bổng  Sinh viên có hoàn cảnh kinh tế gia đình đặc biệt khó k...
+  agent: Nộp trên eHUST hoặc qldt.hust.edu.vn mục học bổng, hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q4: Kỳ II năm học 2025-2026 có bao nhiêu sinh viên được học bổng KKHT loại A, B và C?
+  filter: none
+  gold: 1.888 sinh viên: 1.343 loại A (xuất sắc), 456 loại B (giỏi), 89 loại C (khá).  [hust-kkht-results-2025-2]
+  1. score=0.696  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#0  << GOLD+SPAN
+     # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn luyện xuất ...
+  2. score=0.617  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#1  << GOLD DOC (span missing)
+     - 89 sinh viên được học bổng loại Khá (loại C). Nhà trường sẽ làm thủ tục chuyển tiền học bổng qua tài khoản ngân hàng, tài khoản Viettel Money vào cuối tháng 5...
+  3. score=0.608  doc_id=hust-kkht-council-staff  id=hust-kkht-council-staff#1
+     - Quỹ học bổng KKHT hình thành từ nguồn học phí và bằng 8% (tám phần trăm) học phí của học kỳ lấy điểm xét cấp học bổng. ## Thời gian công bố (Điều 5)  Danh sác...
+  agent: 1.888 sinh viên: 1.343 loại A (xuất sắc), 456 loại B (giỏi), 89 loại C (khá).
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q5: Học bổng MB The Best of MB Chasing 2025 trị giá bao nhiêu và hạn đăng ký là khi nào?
+  filter: none
+  gold: Từ 10–30 triệu VNĐ/sinh viên; hạn đăng ký 09/01/2026.  [hust-mb-chasing-2025]
+  1. score=0.744  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#0  << GOLD DOC (span missing)
+     # Học bổng MB The Best of MB Chasing 2025  Đăng ký tại: https://forms.gle/1DwxLDFqGjA8cUkQ9  Học bổng "The Best of MB Chasing" dành cho Trường Công nghệ Thông t...
+  2. score=0.701  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#1  << GOLD DOC (span missing)
+     - Đảm bảo các tiêu chí học bổng theo quy định của nhà trường. ## Quyền lợi  - Học bổng The Best of MB Chasing 2025 từ 10–30 triệu VNĐ/sinh viên; tổng giá trị gi...
+  3. score=0.595  doc_id=hust-kkht-eligibility-2025-2  id=hust-kkht-eligibility-2025-2#4
+     Thời gian tiếp nhận thắc mắc kết quả và đăng ký tài khoản nhận học bổng: đến 17:00 Thứ Năm ngày 23/04/2026....
+  agent: Không đủ ngữ cảnh trong top-3 để trả lời chính xác.
+  score: 0/2  span_rank=None  doc_rank=1
+
+TOTAL 6/10  (SentenceChunker)
+
+=== Strategy: HeadingChunker (heading) ===
+Corpus : data/hoc-bong-hust
+Embed  : text-embedding-3-small
+Loaded 38 chunks from 7 files
+
+Q1: GPA và điểm rèn luyện tối thiểu để đạt học bổng KKHT loại A là bao nhiêu?
+  filter: none
+  gold: Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm.  [hust-kkht-criteria-student]
+  1. score=0.670  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#1  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  ## Mức học bổng KKHT  Học bổng KKHT có 3 mức:  - Loại khá (loại C): bằng tổng học phí của...
+  2. score=0.621  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#2  << GOLD+SPAN
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  ## Tiêu chuẩn xét cấp (Điều 3)  - Loại C: GPA ≥ 2,5 và điểm rèn luyện học kỳ ≥ 65 điểm. -...
+  3. score=0.584  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#3  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  ## Nguyên tắc xét đối với sinh viên (Điều 4)  - Dùng kết quả học tập và rèn luyện của học...
+  agent: Loại A: GPA ≥ 3,6 và điểm rèn luyện học kỳ ≥ 90 điểm.
+  score: 1/2  span_rank=2  doc_rank=1
+
+Q2: Tiêu chuẩn xét cấp học bổng KKHT là gì?
+  filter: {'audience': 'student'}
+  gold: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.  [hust-kkht-criteria-student]
+  1. score=0.787  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#1  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  ## Mức học bổng KKHT  Học bổng KKHT có 3 mức:  - Loại khá (loại C): bằng tổng học phí của...
+  2. score=0.664  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#2  << GOLD+SPAN
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  ## Tiêu chuẩn xét cấp (Điều 3)  - Loại C: GPA ≥ 2,5 và điểm rèn luyện học kỳ ≥ 65 điểm. -...
+  3. score=0.640  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#5  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  Học bổng được cấp theo hình thức chuyển khoản (nếu bằng tiền) hoặc hỗ trợ kinh phí học ph...
+  agent: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.
+  score: 1/2  span_rank=2  doc_rank=1
+  --- A/B without filter ---
+  1. score=0.787  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#1  << GOLD DOC (span missing)
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  ## Mức học bổng KKHT  Học bổng KKHT có 3 mức:  - Loại khá (loại C): bằng tổng học phí của...
+  2. score=0.696  doc_id=hust-kkht-council-staff  id=hust-kkht-council-staff#1
+     # Hội đồng xét cấp học bổng KKHT và quỹ học bổng  ## Quỹ học bổng (Điều 2)  - Học bổng KKHT cấp cho sinh viên được lựa chọn bởi Hội đồng xét cấp học bổng theo t...
+  3. score=0.664  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#2  << GOLD+SPAN
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  ## Tiêu chuẩn xét cấp (Điều 3)  - Loại C: GPA ≥ 2,5 và điểm rèn luyện học kỳ ≥ 65 điểm. -...
+  agent: Loại C: GPA ≥ 2,5 và rèn luyện ≥ 65; loại B: GPA ≥ 3,2 và rèn luyện ≥ 80; loại A: GPA ≥ 3,6 và rèn luyện ≥ 90.
+  score: 1/2  span_rank=3  doc_rank=1
+
+Q3: Hạn nộp hồ sơ học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027 là khi nào và nộp ở đâu?
+  filter: none
+  gold: Nộp trên eHUST hoặc qldt.hust.edu.vn mục học bổng, hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.  [hust-tran-dai-nghia-2026-1]
+  1. score=0.644  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#8  << GOLD DOC (span missing)
+     # Xét, cấp học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027  ## 3. Hồ sơ đăng ký xét học bổng...
+  2. score=0.628  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#0  << GOLD DOC (span missing)
+     # Xét, cấp học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027...
+  3. score=0.627  doc_id=hust-tran-dai-nghia-2026-1  id=hust-tran-dai-nghia-2026-1#12  << GOLD+SPAN
+     # Xét, cấp học bổng Trần Đại Nghĩa học kỳ I năm học 2026-2027  ## 4. Quy trình đăng ký và kế hoạch xét, cấp học bổng  - Sinh viên đăng ký xét học bổng trên hệ t...
+  agent: Nộp trên eHUST hoặc qldt.hust.edu.vn mục học bổng, hồ sơ giấy tại phòng 102 nhà C1 trước 16h30 thứ Sáu ngày 09/10/2026.
+  score: 1/2  span_rank=3  doc_rank=1
+
+Q4: Kỳ II năm học 2025-2026 có bao nhiêu sinh viên được học bổng KKHT loại A, B và C?
+  filter: none
+  gold: 1.888 sinh viên: 1.343 loại A (xuất sắc), 456 loại B (giỏi), 89 loại C (khá).  [hust-kkht-results-2025-2]
+  1. score=0.701  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#0  << GOLD+SPAN
+     # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Nhà trường thông báo và chúc mừng 1.888 sinh viên có kết quả học tập và rèn luyện xuất ...
+  2. score=0.633  doc_id=hust-kkht-results-2025-2  id=hust-kkht-results-2025-2#1  << GOLD DOC (span missing)
+     # Kết quả xét cấp học bổng khuyến khích học tập kỳ II năm học 2025-2026  Những sinh viên chưa đăng ký tài khoản, thay đổi tài khoản để nhận học bổng, hoặc có ý ...
+  3. score=0.628  doc_id=hust-kkht-criteria-student  id=hust-kkht-criteria-student#1
+     # Tiêu chuẩn xét cấp học bổng khuyến khích học tập dành cho sinh viên  ## Mức học bổng KKHT  Học bổng KKHT có 3 mức:  - Loại khá (loại C): bằng tổng học phí của...
+  agent: 1.888 sinh viên: 1.343 loại A (xuất sắc), 456 loại B (giỏi), 89 loại C (khá).
+  score: 2/2  span_rank=1  doc_rank=1
+
+Q5: Học bổng MB The Best of MB Chasing 2025 trị giá bao nhiêu và hạn đăng ký là khi nào?
+  filter: none
+  gold: Từ 10–30 triệu VNĐ/sinh viên; hạn đăng ký 09/01/2026.  [hust-mb-chasing-2025]
+  1. score=0.873  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#3  << GOLD+SPAN
+     # Học bổng MB The Best of MB Chasing 2025  ## Thời hạn  Hạn đăng ký: 09/01/2026....
+  2. score=0.763  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#0  << GOLD DOC (span missing)
+     # Học bổng MB The Best of MB Chasing 2025  Đăng ký tại: https://forms.gle/1DwxLDFqGjA8cUkQ9  Học bổng "The Best of MB Chasing" dành cho Trường Công nghệ Thông t...
+  3. score=0.726  doc_id=hust-mb-chasing-2025  id=hust-mb-chasing-2025#2  << GOLD DOC (span missing)
+     # Học bổng MB The Best of MB Chasing 2025  ## Quyền lợi  - Học bổng The Best of MB Chasing 2025 từ 10–30 triệu VNĐ/sinh viên; tổng giá trị giải thưởng hiện kim ...
+  agent: Từ 10–30 triệu VNĐ/sinh viên; hạn đăng ký 09/01/2026.
+  score: 2/2  span_rank=1  doc_rank=1
+
+TOTAL 7/10  (HeadingChunker)
